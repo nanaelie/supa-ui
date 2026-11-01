@@ -1,0 +1,68 @@
+{
+  "name": "supa-ui",
+  "version": "0.3.1",
+  "description": "UI kit inspiré de Supabase pour React et Next.js, avec toasts, alertes et confirmations (Toastly) intégrés.",
+  "author": "Nana Elie",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanaelie/supa-ui.git"
+  },
+  "homepage": "https://github.com/nanaelie/supa-ui#readme",
+  "bugs": {
+    "url": "https://github.com/nanaelie/supa-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "ui",
+    "components",
+    "tailwindcss",
+    "toast",
+    "design-system"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./theme.css": "./src/theme.css"
+  },
+  "files": [
+    "dist",
+    "src/theme.css",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && npm run build:css",
+    "build:css": "tailwindcss -i ./src/styles.build.css -o ./dist/styles.css --minify",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "tailwindcss": ">=4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.0",
+    "tailwindcss": "^4.1.0",
+    "@tailwindcss/cli": "^4.1.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  }
+}
