@@ -17,6 +17,7 @@ export default function Sidebar({ groups, pathname = "", linkAs, footer, classNa
 
     return (
         <aside
+            data-supa-ui="sidebar"
             className={`hidden h-full w-(--sui-sidebar-width) shrink-0 border-r border-border bg-background text-foreground md:flex ${className}`}
         >
             <div className="flex h-full w-full flex-col">
