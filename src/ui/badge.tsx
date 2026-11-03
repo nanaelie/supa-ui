@@ -27,6 +27,7 @@ export default function Badge({
 
     return (
         <span
+            data-supa-ui="badge"
             className={cn(
                 "inline-flex shrink-0 items-center gap-1 rounded-full border font-medium whitespace-nowrap [&_svg]:size-3",
                 variants[variant],
