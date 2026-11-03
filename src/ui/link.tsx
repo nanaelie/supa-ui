@@ -40,7 +40,6 @@ export default function Link({
 
     return (
         <Component
-            data-supa-ui="link"
             href={url}
             data-active={active}
             aria-current={active ? "page" : undefined}
@@ -52,6 +51,7 @@ export default function Link({
                 className
             )}
             {...props}
+            data-supa-ui="link"
         >
             {icon}
             {text ? <span>{text}</span> : children}
