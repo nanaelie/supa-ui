@@ -50,7 +50,7 @@ export default function Button({
                 leftIcon
             )}
 
-            <span className="truncate">{children}</span>
+            {children}
 
             {!loading && rightIcon}
         </button>
