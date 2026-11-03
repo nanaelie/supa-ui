@@ -18,7 +18,7 @@ export default function Checkbox({
     const checkboxId = id ?? generatedId;
 
     return (
-        <div className={cn("flex items-start gap-2.5", disabled && "opacity-50")}>
+        <div data-supa-ui="checkbox" className={cn("flex items-start gap-2.5", disabled && "opacity-50")}>
             <input
                 id={checkboxId}
                 type="checkbox"
