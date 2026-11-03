@@ -35,7 +35,7 @@ export default function Select({
     };
 
     return (
-        <div className="flex w-full flex-col gap-1.5">
+        <div data-supa-ui="select" className="flex w-full flex-col gap-1.5">
             {label && (
                 <label htmlFor={selectId} className="text-sm font-medium text-foreground">
                     {label}
