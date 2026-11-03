@@ -38,12 +38,12 @@ export default function Button({
 
     return (
         <button
-            data-supa-ui="button"
             type={type}
             disabled={disabled || loading}
             aria-busy={loading || undefined}
             className={cn("relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium text-center transition-[background-color,border-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50", variants[variant], sizes[size], className)}
             {...props}
+            data-supa-ui="button"
         >
             {loading ? (
                 <span className="size-4 animate-spin rounded-full border-2 border-current border-r-transparent" />
