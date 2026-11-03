@@ -38,6 +38,7 @@ export default function Button({
 
     return (
         <button
+            data-supa-ui="button"
             type={type}
             disabled={disabled || loading}
             aria-busy={loading || undefined}
