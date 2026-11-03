@@ -67,6 +67,7 @@ export default function Navbar({
 
     return (
         <header
+            data-supa-ui="navbar"
             className={cn(
                 "relative w-full border-b border-border",
                 blur ? "bg-background/80 backdrop-blur-md" : "bg-background",
