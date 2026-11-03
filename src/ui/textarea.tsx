@@ -22,7 +22,7 @@ export default function Textarea({
     const errorId = `${textareaId}-error`;
 
     return (
-        <div className="flex w-full flex-col gap-1.5">
+        <div data-supa-ui="textarea" className="flex w-full flex-col gap-1.5">
             {label && (
                 <label htmlFor={textareaId} className="text-sm font-medium text-foreground">
                     {label}
