@@ -20,6 +20,7 @@ export default function Layout({
 }: LayoutProps) {
     return (
         <div
+            data-supa-ui="layout"
             style={{ "--sui-sidebar-width": "13rem", "--sui-header-height": "3rem" } as React.CSSProperties}
             className={cn("flex min-h-svh w-full flex-col bg-background text-foreground", className)}
         >
