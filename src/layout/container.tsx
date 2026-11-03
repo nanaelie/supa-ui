@@ -14,5 +14,5 @@ export default function Container({ size = "xl", className = "", ...props }: Con
         full: "max-w-none"
     };
 
-    return <div className={cn("mx-auto w-full px-4 sm:px-6 lg:px-8", sizes[size], className)} {...props} />;
+    return <div data-supa-ui="container" className={cn("mx-auto w-full px-4 sm:px-6 lg:px-8", sizes[size], className)} {...props} />;
 }
