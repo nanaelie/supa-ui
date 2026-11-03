@@ -18,6 +18,7 @@ export default function Avatar({ src, name = "", size = "md", className = "", ..
 
     return (
         <span
+            data-supa-ui="avatar"
             className={cn(
                 "inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted font-medium text-foreground-light",
                 sizes[size],
