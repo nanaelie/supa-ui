@@ -30,6 +30,7 @@ export default function Header({
 }: HeaderProps) {
     return (
         <header
+            data-supa-ui="header"
             className={`flex h-12 w-full shrink-0 items-center border-b border-border bg-background ${className}`}
             {...props}
         >
