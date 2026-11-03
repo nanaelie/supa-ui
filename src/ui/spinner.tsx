@@ -7,6 +7,7 @@ export default function Spinner({ size = "md", className = "" }: SpinnerProps) {
 
     return (
         <span
+            data-supa-ui="spinner"
             role="status"
             aria-label="Loading"
             className={cn(
