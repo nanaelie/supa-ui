@@ -1,6 +1,6 @@
 # supa-ui
 
-UI kit inspiré du dashboard Supabase pour React et Next.js, avec Toastly (toasts, alertes, confirmations) intégré.
+UI kit de composants pour React et Next.js, avec Toastly (toasts, alertes, confirmations) intégré.
 
 ## Installation
 
