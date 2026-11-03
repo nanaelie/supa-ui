@@ -33,6 +33,7 @@ export default function EmptyState({
 
     return (
         <aside
+            data-supa-ui="empty-state"
             role="status"
             className={`flex w-full flex-col items-center rounded-lg text-center ${variants[variant]} ${sizes[size]} ${className}`}
             {...props}
