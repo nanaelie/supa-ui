@@ -33,10 +33,10 @@ export default function EmptyState({
 
     return (
         <aside
-            data-supa-ui="empty-state"
             role="status"
             className={`flex w-full flex-col items-center rounded-lg text-center ${variants[variant]} ${sizes[size]} ${className}`}
             {...props}
+            data-supa-ui="empty-state"
         >
             {icon && (
                 <div className="flex items-center justify-center text-foreground-muted [&_svg]:shrink-0">
