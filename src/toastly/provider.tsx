@@ -48,6 +48,7 @@ function ToastCard({ toast, onDismiss, className, style }: { toast: StoredToast;
 
     return (
         <div
+            data-supa-ui="toastly-toast"
             role={variant === "error" ? "alert" : "status"}
             style={{ animation: "sui-toast-in 220ms cubic-bezier(0.22,1,0.36,1)", ...style }}
             className={cn(
@@ -167,6 +168,7 @@ export default function ToastlyProvider({
             {children}
 
             <div
+                data-supa-ui="toastly-provider"
                 aria-label="Notifications"
                 className={cn(
                     "pointer-events-none fixed z-[80] flex flex-col gap-2",
