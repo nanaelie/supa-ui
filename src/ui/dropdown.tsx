@@ -47,7 +47,7 @@ export default function Dropdown({ trigger, items, align = "end", triggerLabel =
     };
 
     return (
-        <div ref={rootRef} className={cn("relative inline-flex", className)}>
+        <div ref={rootRef} data-supa-ui="dropdown" className={cn("relative inline-flex", className)}>
             <button
                 type="button"
                 aria-label={triggerLabel}
