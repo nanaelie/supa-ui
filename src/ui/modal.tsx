@@ -44,6 +44,7 @@ export default function Modal({
 
     return (
         <div
+            data-supa-ui="modal"
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs"
             onMouseDown={(event) => {
                 if (event.target === event.currentTarget) onClose();
