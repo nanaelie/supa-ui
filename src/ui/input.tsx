@@ -39,7 +39,7 @@ export default function Input({
     };
 
     return (
-        <div className="flex w-full flex-col gap-1.5">
+        <div data-supa-ui="input" className="flex w-full flex-col gap-1.5">
             {label && (
                 <label htmlFor={inputId} className="text-sm font-medium text-foreground">
                     {label}
