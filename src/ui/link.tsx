@@ -40,6 +40,7 @@ export default function Link({
 
     return (
         <Component
+            data-supa-ui="link"
             href={url}
             data-active={active}
             aria-current={active ? "page" : undefined}
