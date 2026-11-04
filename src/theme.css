@@ -28,6 +28,22 @@
     --sui-border-strong: #d4d4d4;
     --sui-foreground-lighter: #525252;
     --sui-button-shadow-raised: 0 1px 2px rgb(0 0 0 / 10%), inset 0 1px 0 rgb(255 255 255 / 15%);
+
+    --sui-link-padding-x-sm: 0.5rem;
+    --sui-link-padding-y-sm: 0;
+    --sui-link-padding-x-md: 0.5rem;
+    --sui-link-padding-y-md: 0;
+    --sui-link-padding-x-lg: 0.75rem;
+    --sui-link-padding-y-lg: 0;
+
+    --sui-button-padding-x-tiny: 0.625rem;
+    --sui-button-padding-y-tiny: 0;
+    --sui-button-padding-x-sm: 0.75rem;
+    --sui-button-padding-y-sm: 0;
+    --sui-button-padding-x-md: 0.875rem;
+    --sui-button-padding-y-md: 0;
+    --sui-button-padding-x-lg: 1.25rem;
+    --sui-button-padding-y-lg: 0;
 }
 
 .dark {
