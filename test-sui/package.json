@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "predev": "npm --prefix .. run build",
-    "prebuild": "npm --prefix .. run build"
+    "predev": "npm --prefix .. install --include=dev && npm --prefix .. run build",
+    "prebuild": "npm --prefix .. install --include=dev && npm --prefix .. run build"
   },
   "dependencies": {
     "next": "16.4.5",
