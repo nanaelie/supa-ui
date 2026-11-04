@@ -153,4 +153,4 @@ dist
 .next
 .env*
 *.tgz
-
+src/tailwind-candidates.txt
