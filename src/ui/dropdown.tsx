@@ -46,18 +46,32 @@ export default function Dropdown({ trigger, items, align = "end", triggerLabel =
         event.preventDefault();
     };
 
-    return (
-        <div ref={rootRef} data-supa-ui="dropdown" className={cn("relative inline-flex", className)}>
+    const triggerElement = React.isValidElement(trigger)
+        ? React.cloneElement(trigger as React.ReactElement<React.ButtonHTMLAttributes<HTMLButtonElement>>, {
+            "aria-label": trigger.props && "aria-label" in trigger.props ? (trigger.props as { "aria-label"?: string })["aria-label"] : triggerLabel,
+            "aria-haspopup": "menu",
+            "aria-expanded": open,
+            onClick: (event) => {
+                (trigger.props as React.ButtonHTMLAttributes<HTMLButtonElement>).onClick?.(event);
+                setOpen((value) => !value);
+            }
+        })
+        : (
             <button
                 type="button"
                 aria-label={triggerLabel}
                 aria-haspopup="menu"
                 aria-expanded={open}
-                onClick={() => setOpen((v) => !v)}
+                onClick={() => setOpen((value) => !value)}
                 className="inline-flex cursor-pointer items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
                 {trigger}
             </button>
+        );
+
+    return (
+        <div ref={rootRef} data-supa-ui="dropdown" className={cn("relative inline-flex", className)}>
+            {triggerElement}
 
             {open && (
                 <div
