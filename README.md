@@ -24,11 +24,10 @@ Dans `app/globals.css` :
 
 ```css
 @import "tailwindcss";
-@import "supa-ui/theme.css";
-@source "../../node_modules/supa-ui/dist";
+@import "supa-ui/styles.css";
 ```
 
-Ne pas importer également `supa-ui/styles.css` dans ce mode : cela chargerait une deuxième fois les utilitaires du package.
+Les classes internes de Supa UI utilisent le préfixe natif Tailwind v4 `sui:` (par exemple `sui:flex`, `sui:hover:bg-primary`). Les utilitaires du projet hôte restent non préfixés : les deux systèmes peuvent cohabiter sans collision. Il ne faut pas ajouter `supa-ui/theme.css` séparément, car `styles.css` inclut déjà le thème et les utilitaires isolés.
 
 Thème sombre : ajouter ou retirer la classe `dark` sur `<html>`.
 
@@ -64,4 +63,4 @@ npm run build
 npm pack --dry-run
 ```
 
-Le build génère les déclarations TypeScript et `dist/styles.css`. Les composants utilisent les classes Tailwind CSS v4 sans préfixe de classe ; `cn()` fusionne les classes avec `tailwind-merge`.
+Le build génère les déclarations TypeScript et `dist/styles.css`. Les composants utilisent le préfixe Tailwind CSS v4 `sui:` ; `cn()` applique ce préfixe et fusionne les classes avec `tailwind-merge`. Le build génère automatiquement les candidats préfixés avant la compilation CSS.
