@@ -66,7 +66,7 @@ export default function Dropdown({ trigger, items, align = "end", triggerLabel =
                 aria-haspopup="menu"
                 aria-expanded={open}
                 onClick={() => setOpen((value) => !value)}
-                className="inline-flex cursor-pointer items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={cn("inline-flex cursor-pointer items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring")}
             >
                 {trigger}
             </button>
@@ -89,7 +89,7 @@ export default function Dropdown({ trigger, items, align = "end", triggerLabel =
                 >
                     {items.map((entry, index) =>
                         entry.type === "separator" ? (
-                            <div key={index} role="separator" className="my-1 h-px bg-border" />
+                            <div key={index} role="separator" className={cn("my-1 h-px bg-border")} />
                         ) : (
                             <button
                                 key={`${entry.label}-${index}`}
