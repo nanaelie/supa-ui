@@ -1,53 +1,67 @@
 # supa-ui
 
-UI kit de composants pour React et Next.js, avec Toastly (toasts, alertes, confirmations) intégré.
+UI kit de composants pour React et Next.js, avec Toastly (toasts, alertes et confirmations) intégré.
 
 ## Installation
 
-    npm install supa-ui
+```bash
+npm install supa-ui
+```
 
-Dans `app/layout.tsx`, importer le CSS compilé (aucun Tailwind requis dans le projet) :
+### Projet sans Tailwind CSS
 
-    import "supa-ui/styles.css";
+Dans `app/layout.tsx`, importer une seule fois la feuille de style compilée :
 
-Thème sombre : ajouter la classe `dark` sur `<html>`.
+```tsx
+import "supa-ui/styles.css";
+```
 
-Toutes les variables du kit sont préfixées `--sui-*` : elles n'entrent pas en conflit avec les
-`--background` / `--foreground` de ton projet.
+Cette feuille contient les tokens du thème et les utilitaires nécessaires aux composants. Elle n'inclut pas le preflight global de Tailwind.
 
-## Si ton projet utilise déjà Tailwind CSS v4 (et que tu veux les tokens dans tes propres classes)
+### Projet utilisant Tailwind CSS v4
 
-Dans `globals.css`, à la place de l'import compilé :
+Dans `app/globals.css` :
 
-    @import "tailwindcss";
-    @import "supa-ui/theme.css";
-    @source "../../node_modules/supa-ui/dist";
+```css
+@import "tailwindcss";
+@import "supa-ui/theme.css";
+@source "../../node_modules/supa-ui/dist";
+```
 
-Les classes comme `bg-card`, `border-border` ou `text-foreground-muted` sont alors disponibles dans ton code.
+Ne pas importer également `supa-ui/styles.css` dans ce mode : cela chargerait une deuxième fois les utilitaires du package.
+
+Thème sombre : ajouter ou retirer la classe `dark` sur `<html>`.
+
+Toutes les variables de thème du kit sont préfixées `--sui-*` pour éviter les collisions avec les variables de ton application.
 
 ## Composants
 
-ui : Button, Input, Select, Textarea, Checkbox, Badge, Avatar, Spinner, Modal, Link, Tabs, Dropdown, Card
-layout : Header, Navbar (menu mobile), Sidebar, Footer, Container, Layout
-shared : PageHeader, EmptyState, LoadingState
+- UI : Button, Input, Select, Textarea, Checkbox, Badge, Avatar, Spinner, Modal, Link, Tabs, Dropdown, Card
+- Layout : Header, Navbar, Sidebar, Footer, Container, Layout
+- Shared : PageHeader, EmptyState, LoadingState
+- Toastly : notifications, alertes, confirmations et gestion des promesses
 
 ## Toastly
 
-    import { ToastlyProvider, toastly } from "supa-ui";
+```tsx
+import { ToastlyProvider, toastly } from "supa-ui";
 
-    <ToastlyProvider position="bottom-right" duration={4000}>{children}</ToastlyProvider>
+<ToastlyProvider position="bottom-right" duration={4000}>
+    {children}
+</ToastlyProvider>;
 
-    toastly.success("Profil enregistré");
-    toastly.promise(save(), { loading: "Envoi...", success: "Envoyé", error: "Erreur" });
-    await toastly.alert({ title: "Session", message: "Votre session expire bientôt." });
-    const ok = await toastly.confirm({ title: "Supprimer ?", danger: true });
+toastly.success("Profil enregistré");
+toastly.promise(save(), { loading: "Envoi...", success: "Envoyé", error: "Erreur" });
+await toastly.alert({ title: "Session", message: "Votre session expire bientôt." });
+const ok = await toastly.confirm({ title: "Supprimer ?", danger: true });
+```
 
-## Développement et publication
+## Développement
 
-    npm install
-    npm run build        # tsc (dist/*.js) + CSS compilé (dist/styles.css)
-    npm pack --dry-run   # vérifier le contenu
-    npm publish
+```bash
+npm install
+npm run build
+npm pack --dry-run
+```
 
-Limite connue : les noms de classes (`bg-background`, `text-foreground`...) peuvent entrer en collision
-avec ceux d'un projet qui définit les mêmes noms (thème shadcn par exemple).
+Le build génère les déclarations TypeScript et `dist/styles.css`. Les composants utilisent les classes Tailwind CSS v4 sans préfixe de classe ; `cn()` fusionne les classes avec `tailwind-merge`.
