@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
     Avatar,
     Badge,
@@ -53,7 +53,7 @@ function Icon({ name }: { name: string }) {
     );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ title, children }: { title: string; children: ReactNode }) {
     return (
         <Card>
             <CardHeader>
