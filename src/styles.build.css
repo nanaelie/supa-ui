@@ -1,8 +1,9 @@
-@import "tailwindcss/theme";
+@import "tailwindcss/theme" prefix(sui);
 @import "./theme.css";
-@import "tailwindcss/utilities";
+@import "tailwindcss/utilities" prefix(sui);
 
 @source "./";
+@source "./tailwind-candidates.txt";
 
 @layer base {
     [data-supa-ui],
