@@ -61,22 +61,22 @@ function ToastCard({ toast, onDismiss, className, style }: { toast: StoredToast;
                 {toast.loading ? (
                     <Spinner size="sm" />
                 ) : (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={cn("size-5")}>
                         {ICON_PATHS[variant]}
                     </svg>
                 )}
             </span>
 
-            <div className="min-w-0 flex-1 break-words pt-px">{toast.message}</div>
+            <div className={cn("min-w-0 flex-1 break-words pt-px")}>{toast.message}</div>
 
             {toast.allowDismiss !== false && (
                 <button
                     type="button"
                     aria-label="Dismiss"
                     onClick={() => onDismiss(toast.id)}
-                    className="-mr-1 -mt-0.5 inline-flex size-6 shrink-0 cursor-pointer items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-accent hover:text-foreground"
+                    className={cn("-mr-1 -mt-0.5 inline-flex size-6 shrink-0 cursor-pointer items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-accent hover:text-foreground")}
                 >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="size-3.5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={cn("size-3.5")}>
                         <path d="M18 6 6 18M6 6l12 12" />
                     </svg>
                 </button>
@@ -185,7 +185,7 @@ export default function ToastlyProvider({
                     key={toast.id}
                     toast={toast}
                     onDismiss={dismiss}
-                    className="fixed z-[80]"
+                    className={cn("fixed z-[80]")}
                     style={{ left: Number(toast.position?.[0] ?? 0), top: Number(toast.position?.[1] ?? 0) }}
                 />
             ))}
@@ -197,7 +197,7 @@ export default function ToastlyProvider({
                 size="sm"
                 footer={<Button size="sm" onClick={closeAlert}>{alertState?.okLabel ?? "OK"}</Button>}
             >
-                <div className="text-sm text-foreground-lighter">{alertState?.message}</div>
+                <div className={cn("text-sm text-foreground-lighter")}>{alertState?.message}</div>
             </Modal>
 
             <Modal
@@ -216,7 +216,7 @@ export default function ToastlyProvider({
                     </>
                 }
             >
-                <div className="text-sm text-foreground-lighter">{confirmState?.message}</div>
+                <div className={cn("text-sm text-foreground-lighter")}>{confirmState?.message}</div>
             </Modal>
         </>
     );
