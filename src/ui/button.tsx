@@ -30,10 +30,10 @@ export default function Button({
     };
 
     const sizes = {
-        tiny: "h-[26px] rounded-md px-2.5 text-xs [&_svg]:size-3.5",
-        sm: "h-8 rounded-md px-3 text-xs [&_svg]:size-4",
-        md: "h-9 rounded-md px-3.5 text-sm [&_svg]:size-4",
-        lg: "h-10 rounded-lg px-5 text-sm [&_svg]:size-5"
+        tiny: "h-[26px] rounded-md px-[var(--sui-button-padding-x-tiny)] py-[var(--sui-button-padding-y-tiny)] text-xs [&_svg]:size-3.5",
+        sm: "h-8 rounded-md px-[var(--sui-button-padding-x-sm)] py-[var(--sui-button-padding-y-sm)] text-xs [&_svg]:size-4",
+        md: "h-9 rounded-md px-[var(--sui-button-padding-x-md)] py-[var(--sui-button-padding-y-md)] text-sm [&_svg]:size-4",
+        lg: "h-10 rounded-lg px-[var(--sui-button-padding-x-lg)] py-[var(--sui-button-padding-y-lg)] text-sm [&_svg]:size-5"
     };
 
     return (
