@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cn } from "../lib/cn";
 
 type EmptyStateProps = {
     title?: string;
@@ -34,26 +35,26 @@ export default function EmptyState({
     return (
         <aside
             role="status"
-            className={`flex w-full flex-col items-center rounded-lg text-center ${variants[variant]} ${sizes[size]} ${className}`}
+            className={cn(`flex w-full flex-col items-center rounded-lg text-center ${variants[variant]} ${sizes[size]} ${className}`)}
             {...props}
             data-supa-ui="empty-state"
         >
             {icon && (
-                <div className="flex items-center justify-center text-foreground-muted [&_svg]:shrink-0">
+                <div className={cn("flex items-center justify-center text-foreground-muted [&_svg]:shrink-0")}>
                     {icon}
                 </div>
             )}
 
             {(title || description) && (
-                <div className="flex max-w-160 flex-col items-center gap-y-1 text-balance">
+                <div className={cn("flex max-w-160 flex-col items-center gap-y-1 text-balance")}>
                     {title && (
-                        <h3 className="text-sm font-medium text-foreground">
+                        <h3 className={cn("text-sm font-medium text-foreground")}>
                             {title}
                         </h3>
                     )}
 
                     {description && (
-                        <p className="text-sm leading-relaxed text-foreground-muted">
+                        <p className={cn("text-sm leading-relaxed text-foreground-muted")}>
                             {description}
                         </p>
                     )}
@@ -61,7 +62,7 @@ export default function EmptyState({
             )}
 
             {action && (
-                <div className="flex items-center gap-2">
+                <div className={cn("flex items-center gap-2")}>
                     {action}
                 </div>
             )}
