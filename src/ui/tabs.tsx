@@ -47,7 +47,7 @@ export default function Tabs({ items, value, defaultValue, onChange, className =
 
     return (
         <div data-supa-ui="tabs" className={cn("flex w-full flex-col gap-4", className)}>
-            <div role="tablist" onKeyDown={onKeyDown} className="flex items-center gap-1 overflow-x-auto border-b border-border">
+            <div role="tablist" onKeyDown={onKeyDown} className={cn("flex items-center gap-1 overflow-x-auto border-b border-border")}>
                 {items.map((item) => {
                     const selected = item.value === current;
                     return (
