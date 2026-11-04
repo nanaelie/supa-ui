@@ -11,12 +11,12 @@ export type PageHeaderProps = {
 export default function PageHeader({ title, description, actions, className = "" }: PageHeaderProps) {
     return (
         <div data-supa-ui="page-header" className={cn("flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between", className)}>
-            <div className="flex min-w-0 flex-col gap-1">
-                <h1 className="truncate text-xl font-medium text-foreground">{title}</h1>
-                {description && <p className="text-sm text-foreground-muted">{description}</p>}
+            <div className={cn("flex min-w-0 flex-col gap-1")}>
+                <h1 className={cn("truncate text-xl font-medium text-foreground")}>{title}</h1>
+                {description && <p className={cn("text-sm text-foreground-muted")}>{description}</p>}
             </div>
 
-            {actions && <div className="flex shrink-0 items-center gap-2">{actions}</div>}
+            {actions && <div className={cn("flex shrink-0 items-center gap-2")}>{actions}</div>}
         </div>
     );
 }
