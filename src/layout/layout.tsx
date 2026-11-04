@@ -28,7 +28,7 @@ export default function Layout({
         >
             <a
                 href="#main"
-                className="fixed left-2.5 top-0 z-100 w-fit -translate-y-[calc(100%+8px)] rounded-md bg-popover px-2.5 py-1 text-xs font-medium text-foreground shadow transition-transform duration-200 ease-out focus:translate-y-[10px]"
+                className={cn("fixed left-2.5 top-0 z-100 w-fit -translate-y-[calc(100%+8px)] rounded-md bg-popover px-2.5 py-1 text-xs font-medium text-foreground shadow transition-transform duration-200 ease-out focus:translate-y-[10px]")}
             >
                 Skip to content
             </a>
@@ -37,14 +37,14 @@ export default function Layout({
                 <div className={cn("z-40 shrink-0 bg-background", stickyHeader && "sticky top-0")}>{header}</div>
             )}
 
-            <div className="flex min-w-0 flex-1">
+            <div className={cn("flex min-w-0 flex-1")}>
                 {sidebar && (
                     <div className={cn("sticky top-(--sui-header-height) h-[calc(100svh-var(--sui-header-height))] shrink-0", openSidebar ? "hidden md:block" : "hidden")}>
                         {sidebar}
                     </div>
                 )}
 
-                <main id="main" tabIndex={-1} className="min-w-0 flex-1 outline-none">
+                <main id="main" tabIndex={-1} className={cn("min-w-0 flex-1 outline-none")}>
                     {children}
                 </main>
             </div>
