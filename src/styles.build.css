@@ -36,12 +36,6 @@
     [data-supa-ui] img {
         display: block;
     }
-
-    body {
-        margin: 0;
-        background-color: var(--sui-background);
-        color: var(--sui-foreground);
-    }
 }
 
 @keyframes sui-toast-in {
