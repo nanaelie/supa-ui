@@ -47,15 +47,18 @@ export default function Dropdown({ trigger, items, align = "end", triggerLabel =
     };
 
     const triggerElement = React.isValidElement(trigger)
-        ? React.cloneElement(trigger as React.ReactElement<React.ButtonHTMLAttributes<HTMLButtonElement>>, {
-            "aria-label": trigger.props && "aria-label" in trigger.props ? (trigger.props as { "aria-label"?: string })["aria-label"] : triggerLabel,
-            "aria-haspopup": "menu",
-            "aria-expanded": open,
-            onClick: (event) => {
-                (trigger.props as React.ButtonHTMLAttributes<HTMLButtonElement>).onClick?.(event);
-                setOpen((value) => !value);
-            }
-        })
+        ? (() => {
+            const element = trigger as React.ReactElement<React.ButtonHTMLAttributes<HTMLButtonElement>>;
+            return React.cloneElement(element, {
+                "aria-label": element.props["aria-label"] ?? triggerLabel,
+                "aria-haspopup": "menu",
+                "aria-expanded": open,
+                onClick: (event) => {
+                    element.props.onClick?.(event);
+                    setOpen((value) => !value);
+                }
+            });
+        })()
         : (
             <button
                 type="button"
