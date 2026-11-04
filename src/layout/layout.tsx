@@ -6,6 +6,7 @@ export type LayoutProps = {
     sidebar?: React.ReactNode;
     footer?: React.ReactNode;
     stickyHeader?: boolean;
+    openSidebar?: boolean;
     children?: React.ReactNode;
     className?: string;
 };
@@ -15,6 +16,7 @@ export default function Layout({
     sidebar,
     footer,
     stickyHeader = true,
+    openSidebar = true,
     children,
     className = ""
 }: LayoutProps) {
@@ -37,7 +39,7 @@ export default function Layout({
 
             <div className="flex min-w-0 flex-1">
                 {sidebar && (
-                    <div className="sticky top-(--sui-header-height) hidden h-[calc(100svh-var(--sui-header-height))] shrink-0 md:block">
+                    <div className={cn("sticky top-(--sui-header-height) h-[calc(100svh-var(--sui-header-height))] shrink-0", openSidebar ? "hidden md:block" : "hidden")}>
                         {sidebar}
                     </div>
                 )}
