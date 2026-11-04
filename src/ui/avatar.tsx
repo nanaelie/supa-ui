@@ -26,7 +26,7 @@ export default function Avatar({ src, name = "", size = "md", className = "", ..
             {...props}
             data-supa-ui="avatar"
         >
-            {src ? <img src={src} alt={name} className="size-full object-cover" /> : initials}
+            {src ? <img src={src} alt={name} className={cn("size-full object-cover")} /> : initials}
         </span>
     );
 }
