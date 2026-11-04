@@ -33,9 +33,9 @@ export default function Link({
     };
 
     const sizes = {
-        sm: "h-7 px-2 text-xs [&>svg]:size-4",
-        md: "h-8 px-2 text-sm [&>svg]:size-5",
-        lg: "h-10 px-3 text-base [&>svg]:size-5"
+        sm: "h-7 px-[var(--sui-link-padding-x-sm)] py-[var(--sui-link-padding-y-sm)] text-xs [&>svg]:size-4",
+        md: "h-8 px-[var(--sui-link-padding-x-md)] py-[var(--sui-link-padding-y-md)] text-sm [&>svg]:size-5",
+        lg: "h-10 px-[var(--sui-link-padding-x-lg)] py-[var(--sui-link-padding-y-lg)] text-base [&>svg]:size-5"
     };
 
     return (
