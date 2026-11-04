@@ -46,7 +46,7 @@ export default function Button({
             data-supa-ui="button"
         >
             {loading ? (
-                <span className="size-4 animate-spin rounded-full border-2 border-current border-r-transparent" />
+                <span className={cn("size-4 animate-spin rounded-full border-2 border-current border-r-transparent")} />
             ) : (
                 leftIcon
             )}
