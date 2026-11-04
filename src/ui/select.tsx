@@ -35,14 +35,14 @@ export default function Select({
     };
 
     return (
-        <div data-supa-ui="select" className="flex w-full flex-col gap-1.5">
+        <div data-supa-ui="select" className={cn("flex w-full flex-col gap-1.5")}>
             {label && (
-                <label htmlFor={selectId} className="text-sm font-medium text-foreground">
+                <label htmlFor={selectId} className={cn("text-sm font-medium text-foreground")}>
                     {label}
                 </label>
             )}
 
-            <div className="relative flex w-full items-center">
+            <div className={cn("relative flex w-full items-center")}>
                 <select
                     id={selectId}
                     disabled={disabled}
@@ -72,20 +72,20 @@ export default function Select({
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="pointer-events-none absolute right-3 size-4 text-foreground-muted"
+                    className={cn("pointer-events-none absolute right-3 size-4 text-foreground-muted")}
                 >
                     <path d="m6 9 6 6 6-6" />
                 </svg>
             </div>
 
             {error && (
-                <span id={errorId} role="alert" className="text-xs text-destructive">
+                <span id={errorId} role="alert" className={cn("text-xs text-destructive")}>
                     {error}
                 </span>
             )}
 
             {!error && hint && (
-                <span id={descriptionId} className="text-xs text-foreground-muted">
+                <span id={descriptionId} className={cn("text-xs text-foreground-muted")}>
                     {hint}
                 </span>
             )}
