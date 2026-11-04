@@ -1,7 +1,6 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
-import { join, relative } from "node:path";
+import { join } from "node:path";
 
-const root = new URL("../src/", import.meta.url);
 const candidates = new Set();
 
 async function scan(directory) {
@@ -13,10 +12,10 @@ async function scan(directory) {
             continue;
         }
 
-        if (!/\\.(tsx?|jsx?)$/.test(entry.name) || entry.name.endsWith(".d.ts")) continue;
+        if (!/\.(tsx?|jsx?)$/.test(entry.name) || entry.name.endsWith(".d.ts")) continue;
 
         const source = await readFile(path, "utf8");
-        const strings = source.match(/(["'`])(?:\\\\.|(?!\\1)[\\s\\S])*?\\1/g) ?? [];
+        const strings = source.match(/(["'`])(?:\\.|(?!\\1)[\\s\\S])*?\\1/g) ?? [];
 
         for (const value of strings) {
             const content = value.slice(1, -1).replace(/\\\\[\\\\'" `]/g, " ");
