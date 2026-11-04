@@ -46,7 +46,7 @@ export default function Navbar({
                 href={item.href}
                 aria-current={item.active ? "page" : undefined}
                 onClick={() => setOpen(false)}
-                className={itemClass(item.active, mobile)}
+                className={cn(itemClass(item.active, mobile))}
             >
                 {item.label}
             </a>
@@ -59,7 +59,7 @@ export default function Navbar({
                     item.onClick?.();
                     setOpen(false);
                 }}
-                className={itemClass(item.active, mobile)}
+                className={cn(itemClass(item.active, mobile))}
             >
                 {item.label}
             </button>
@@ -74,17 +74,17 @@ export default function Navbar({
                 className
             )}
         >
-            <Container className="flex h-12 items-center justify-between gap-2 sm:gap-6">
-                <div className="flex min-w-0 items-center gap-1">
+            <Container className={cn("flex h-12 items-center justify-between gap-2 sm:gap-6")}>
+                <div className={cn("flex min-w-0 items-center gap-1")}>
                     {items.length > 0 && (
                         <button
                             type="button"
                             aria-label="Menu"
                             aria-expanded={open}
                             onClick={() => setOpen((v) => !v)}
-                            className="-ml-2 inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-md text-foreground-lighter hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+                            className={cn("-ml-2 inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-md text-foreground-lighter hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden")}
                         >
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="size-5">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={cn("size-5")}>
                                 {open ? <path d="M18 6 6 18M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
                             </svg>
                         </button>
@@ -98,25 +98,25 @@ export default function Navbar({
                                 onLogoClick();
                             }
                         }}
-                        className="flex shrink-0 items-center gap-2 text-sm font-semibold text-foreground"
+                        className={cn("flex shrink-0 items-center gap-2 text-sm font-semibold text-foreground")}
                     >
                         {logo}
                     </a>
                 </div>
 
                 {items.length > 0 && (
-                    <nav aria-label="Navigation" className="hidden min-w-0 items-center gap-1 overflow-x-auto md:flex">
+                    <nav aria-label="Navigation" className={cn("hidden min-w-0 items-center gap-1 overflow-x-auto md:flex")}>
                         {items.map((item) => renderItem(item))}
                     </nav>
                 )}
 
-                {actions && <div className="flex shrink-0 items-center gap-1">{actions}</div>}
+                {actions && <div className={cn("flex shrink-0 items-center gap-1")}>{actions}</div>}
             </Container>
 
             {open && items.length > 0 && (
                 <nav
                     aria-label="Navigation mobile"
-                    className="absolute inset-x-0 top-full flex flex-col gap-1 border-b border-border bg-background p-2 shadow-lg md:hidden"
+                    className={cn("absolute inset-x-0 top-full flex flex-col gap-1 border-b border-border bg-background p-2 shadow-lg md:hidden")}
                 >
                     {items.map((item) => renderItem(item, true))}
                 </nav>
