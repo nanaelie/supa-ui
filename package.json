@@ -44,7 +44,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json && npm run build:css",
-    "build:css": "tailwindcss -i ./src/styles.build.css -o ./dist/styles.css",
+    "build:css": "node ./scripts/generate-css-candidates.mjs && tailwindcss -i ./src/styles.build.css -o ./dist/styles.css",
     "lint": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
