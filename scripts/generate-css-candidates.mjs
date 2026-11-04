@@ -12,22 +12,27 @@ async function scan(directory) {
             continue;
         }
 
-        if (!/\.(tsx?|jsx?)$/.test(entry.name) || entry.name.endsWith(".d.ts")) continue;
+        if (!/\\.(tsx?|jsx?)$/.test(entry.name) || entry.name.endsWith(".d.ts")) continue;
 
         const source = await readFile(path, "utf8");
-        const strings = source.match(/(["'\`])(?:\\.|(?!\1)[\s\S])*?\1/g) ?? [];
+        const strings = source.match(/(["'`])(?:\\\\.|(?!\\1)[\\s\\S])*?\\1/g) ?? [];
 
         for (const value of strings) {
-            const content = value.slice(1, -1).replace(/\\[\\'" \`]/g, " ");
-            for (const token of content.split(/\s+/)) {
+            const content = value.slice(1, -1).replace(/\\\\[\\\\'" `]/g, " ");
+            for (const token of content.split(/\\s+/)) {
                 const candidate = token.replace(/^[,;]+|[,;]+$/g, "");
-                if (candidate && !candidate.startsWith("sui:")) candidates.add("sui:" + candidate);
-                else if (candidate) candidates.add(candidate);
+                if (!candidate) continue;
+                candidates.add(candidate.startsWith("sui:") ? candidate : "sui:" + candidate);
             }
         }
     }
 }
 
 await scan(new URL("../src/", import.meta.url).pathname);
-await writeFile(new URL("../src/tailwind-candidates.txt", import.meta.url), [...candidates].join("\n"));
+
+const css = [...candidates]
+    .map((candidate) => `@source inline("${candidate.replaceAll("\\\\", "\\\\\\\\").replaceAll('"', '\\\\"')}");`)
+    .join("\\n");
+
+await writeFile(new URL("../src/tailwind-candidates.css", import.meta.url), css + "\\n");
 console.log("Generated " + candidates.size + " isolated Tailwind candidates.");
