@@ -35,6 +35,8 @@ import {
 
 const pages = ["Actions", "Formulaires", "Interactions", "Layout & Shared"];
 
+const VERSION = "v0.3.7";
+
 function Icon({ name }: { name: string }) {
     const paths: Record<string, string> = {
         home: "M3 10.5 12 3l9 7.5M5 9v12h14V9M9 21v-8h6v8",
@@ -71,13 +73,13 @@ export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
     const [checked, setChecked] = useState(true);
     const [tab, setTab] = useState("overview");
-    const [name, setName] = useState("Nana Elie");
+    const [name, setName] = useState("Supa UI");
 
     const next = () => setPage((current) => Math.min(current + 1, pages.length - 1));
     const previous = () => setPage((current) => Math.max(current - 1, 0));
 
     return (
-        <ToastlyProvider position="bottom-right">
+        <ToastlyProvider position="top-center">
             <div className="flex h-dvh max-h-dvh flex-col overflow-hidden bg-background text-foreground">
                 <header className="flex h-14 shrink-0 items-center justify-between border-b border-border px-4 sm:px-6">
                     <div className="flex items-center gap-3">
@@ -91,7 +93,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        <Badge variant="primary">v0.3.6</Badge>
+                        <Badge variant="primary">{VERSION}</Badge>
                         <Button size="sm" variant="outline" onClick={() => document.documentElement.classList.toggle("dark")}>
                             Toggle theme
                         </Button>
