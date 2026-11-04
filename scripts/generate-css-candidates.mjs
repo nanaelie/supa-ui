@@ -15,10 +15,10 @@ async function scan(directory) {
         if (!/\.(tsx?|jsx?)$/.test(entry.name) || entry.name.endsWith(".d.ts")) continue;
 
         const source = await readFile(path, "utf8");
-        const strings = source.match(/(["'])(?:\\.|(?!\1)[\s\S])*?\1/g) ?? [];
+        const strings = source.match(/(["'\`])(?:\\.|(?!\1)[\s\S])*?\1/g) ?? [];
 
         for (const value of strings) {
-            const content = value.slice(1, -1).replace(/\\[\\'"]/g, " ");
+            const content = value.slice(1, -1).replace(/\\[\\'" \`]/g, " ");
             for (const token of content.split(/\s+/)) {
                 const candidate = token.replace(/^[,;]+|[,;]+$/g, "");
                 if (candidate && !candidate.startsWith("sui:")) candidates.add("sui:" + candidate);
