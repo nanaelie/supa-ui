@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "predev": "npm --prefix .. run build",
+    "prebuild": "npm --prefix .. run build"
   },
   "dependencies": {
     "next": "16.4.5",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "supa-ui": "^0.3.6"
+    "supa-ui": "file:.."
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
