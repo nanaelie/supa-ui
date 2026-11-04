@@ -44,7 +44,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json && npm run build:css",
-    "build:css": "tailwindcss -i ./src/styles.build.css -o ./dist/styles.css --minify",
+    "build:css": "tailwindcss -i ./src/styles.build.css -o ./dist/styles.css",
     "lint": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
@@ -54,15 +54,20 @@
     "tailwindcss": ">=4"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.8.0",
     "tailwindcss": "^4.1.0",
-    "@tailwindcss/cli": "^4.1.0"
+    "typescript": "^5.8.0"
   },
   "peerDependenciesMeta": {
     "tailwindcss": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.7.0"
   }
 }

@@ -28,3 +28,6 @@ export type { NavbarItem } from "./layout/navbar";
 export type { TabItem } from "./ui/tabs";
 export type { DropdownEntry } from "./ui/dropdown";
 export type { ToastVariant, ToastEvent, ToastInput, AlertEvent, ConfirmEvent, ToastlyPosition, ToastlyProviderProps } from "./toastly/types";
+
+import "./theme.css";
+import "./styles.css";

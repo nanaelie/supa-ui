@@ -1,4 +1,15 @@
-// TODO: remplacer par clsx + tailwind-merge dans les projets qui les utilisent déjà
-export function cn(...classes: Array<string | false | null | undefined>) {
-    return classes.filter(Boolean).join(" ");
+import { clsx, type ClassValue } from "clsx";
+import { extendTailwindMerge } from "tailwind-merge";
+
+const twMerge = extendTailwindMerge({
+    prefix: "sui",
+});
+
+export function cn(...inputs: ClassValue[]) {
+    const classes = clsx(inputs)
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((className) => `sui-${className}`);
+
+    return twMerge(classes);
 }
