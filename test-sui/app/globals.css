@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "supa-ui/theme.css";
 @import "supa-ui/styles.css";
 
 @theme inline {
