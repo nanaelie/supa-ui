@@ -22,9 +22,9 @@ export default function Textarea({
     const errorId = `${textareaId}-error`;
 
     return (
-        <div data-supa-ui="textarea" className="flex w-full flex-col gap-1.5">
+        <div data-supa-ui="textarea" className={cn("flex w-full flex-col gap-1.5")}>
             {label && (
-                <label htmlFor={textareaId} className="text-sm font-medium text-foreground">
+                <label htmlFor={textareaId} className={cn("text-sm font-medium text-foreground")}>
                     {label}
                 </label>
             )}
@@ -42,13 +42,13 @@ export default function Textarea({
             />
 
             {error && (
-                <span id={errorId} role="alert" className="text-xs text-destructive">
+                <span id={errorId} role="alert" className={cn("text-xs text-destructive")}>
                     {error}
                 </span>
             )}
 
             {!error && hint && (
-                <span id={descriptionId} className="text-xs text-foreground-muted">
+                <span id={descriptionId} className={cn("text-xs text-foreground-muted")}>
                     {hint}
                 </span>
             )}
