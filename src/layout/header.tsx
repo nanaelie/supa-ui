@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cn } from "../lib/cn";
 
 type HeaderSegment = {
     label: string;
@@ -30,15 +31,15 @@ export default function Header({
 }: HeaderProps) {
     return (
         <header
-            className={`flex h-12 w-full shrink-0 items-center border-b border-border bg-background ${className}`}
+            className={cn(`flex h-12 w-full shrink-0 items-center border-b border-border bg-background ${className}`)}
             {...props}
             data-supa-ui="header"
         >
-            <div className="flex h-full min-w-0 flex-1 items-center justify-between gap-4 overflow-x-auto px-4">
-                <div className="flex min-w-0 h-full items-center gap-4">
+            <div className={cn("flex h-full min-w-0 flex-1 items-center justify-between gap-4 overflow-x-auto px-4")}>
+                <div className={cn("flex min-w-0 h-full items-center gap-4")}>
                     <a
                         href={brandHref}
-                        className="flex shrink-0 items-center justify-center"
+                        className={cn("flex shrink-0 items-center justify-center")}
                         aria-label="Home"
                     >
                         {logo}
@@ -47,40 +48,40 @@ export default function Header({
                     {segments.length > 0 && (
                         <nav
                             aria-label="Breadcrumb"
-                            className="flex h-full min-w-0 items-center gap-2"
+                            className={cn("flex h-full min-w-0 items-center gap-2")}
                         >
                             {segments.map((segment, index) => (
                                 <React.Fragment key={`${segment.label}-${index}`}>
                                     <span
                                         aria-hidden="true"
-                                        className="h-4 w-px shrink-0 rotate-27 bg-border-strong"
+                                        className={cn("h-4 w-px shrink-0 rotate-27 bg-border-strong")}
                                     />
 
-                                    <div className="flex shrink-0 items-center gap-1">
+                                    <div className={cn("flex shrink-0 items-center gap-1")}>
                                         {segment.href ? (
                                             <a
                                                 href={segment.href}
                                                 aria-current={segment.active ? "page" : undefined}
-                                                className={`flex min-w-0 items-center gap-2 text-sm transition-colors hover:text-foreground ${segment.active ? "text-foreground" : "text-foreground-muted"}`}
+                                                className={cn(`flex min-w-0 items-center gap-2 text-sm transition-colors hover:text-foreground ${segment.active ? "text-foreground" : "text-foreground-muted"}`)}
                                             >
                                                 {segment.icon}
 
-                                                <span className="max-w-32 truncate lg:max-w-64">
+                                                <span className={cn("max-w-32 truncate lg:max-w-64")}>
                                                     {segment.label}
                                                 </span>
                                             </a>
                                         ) : (
-                                            <span className="flex min-w-0 items-center gap-2 text-sm text-foreground">
+                                            <span className={cn("flex min-w-0 items-center gap-2 text-sm text-foreground")}>
                                                 {segment.icon}
 
-                                                <span className="max-w-32 truncate lg:max-w-64">
+                                                <span className={cn("max-w-32 truncate lg:max-w-64")}>
                                                     {segment.label}
                                                 </span>
                                             </span>
                                         )}
 
                                         {segment.badge && (
-                                            <span className="inline-flex shrink-0 items-center rounded-full border border-border bg-muted px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-foreground-muted">
+                                            <span className={cn("inline-flex shrink-0 items-center rounded-full border border-border bg-muted px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-foreground-muted")}>
                                                 {segment.badge}
                                             </span>
                                         )}
@@ -93,14 +94,14 @@ export default function Header({
                     )}
 
                     {actions && (
-                        <div className="flex shrink-0 items-center gap-2">
+                        <div className={cn("flex shrink-0 items-center gap-2")}>
                             {actions}
                         </div>
                     )}
                 </div>
 
                 {utilities && (
-                    <div className="flex shrink-0 items-center gap-2">
+                    <div className={cn("flex shrink-0 items-center gap-2")}>
                         {utilities}
                     </div>
                 )}
