@@ -5,12 +5,13 @@ import Link, { LinkProps } from "../ui/link";
 export type SidebarProps = {
     groups: LinkProps[][];
     pathname?: string;
+    link?: React.ElementType<LinkProps>;
     linkAs?: React.ElementType;
     footer?: React.ReactNode;
     className?: string;
 };
 
-export default function Sidebar({ groups, pathname = "", linkAs, footer, className = "" }: SidebarProps) {
+export default function Sidebar({ groups, pathname = "", link: LinkComponent = Link, linkAs, footer, className = "" }: SidebarProps) {
     const isActive = (url: string) => {
         if (url === "/") return pathname === "/";
         return pathname === url || pathname.startsWith(`${url}/`);
@@ -27,12 +28,12 @@ export default function Sidebar({ groups, pathname = "", linkAs, footer, classNa
                         {groups.map((group, index) => (
                             <React.Fragment key={index}>
                                 <ul className={cn("flex w-full flex-col gap-1 px-2 py-1")}>
-                                    {group.map((link) => (
-                                        <li key={link.url}>
-                                            <Link
-                                                {...link}
-                                                as={linkAs ?? link.as}
-                                                active={link.active ?? isActive(link.url)}
+                                    {group.map((item) => (
+                                        <li key={item.url}>
+                                            <LinkComponent
+                                                {...item}
+                                                as={linkAs ?? item.as}
+                                                active={item.active ?? isActive(item.url)}
                                                 variant="default"
                                                 size="md"
                                             />
