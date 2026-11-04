@@ -1,7 +1,5 @@
 @import "tailwindcss";
-@import "supa-ui/theme.css";
-
-@source "../../src";
+@import "supa-ui/styles.css";
 
 @theme inline {
     --font-sans: Arial, Helvetica, sans-serif;
