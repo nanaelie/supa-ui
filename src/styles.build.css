@@ -5,7 +5,39 @@
 @source "./";
 
 @layer base {
+    [data-supa-ui],
+    [data-supa-ui] *,
+    [data-supa-ui]::before,
+    [data-supa-ui]::after,
+    [data-supa-ui] *::before,
+    [data-supa-ui] *::after {
+        box-sizing: border-box;
+        border: 0 solid;
+    }
+
+    [data-supa-ui] :where(h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd) {
+        margin: 0;
+    }
+
+    [data-supa-ui] :where(ul, ol) {
+        padding: 0;
+        list-style: none;
+    }
+
+    [data-supa-ui] button,
+    [data-supa-ui] input,
+    [data-supa-ui] select,
+    [data-supa-ui] textarea {
+        font: inherit;
+        color: inherit;
+    }
+
+    [data-supa-ui] img {
+        display: block;
+    }
+
     body {
+        margin: 0;
         background-color: var(--sui-background);
         color: var(--sui-foreground);
     }
