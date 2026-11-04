@@ -31,9 +31,9 @@ export default function Checkbox({
             />
 
             {(label || description) && (
-                <label htmlFor={checkboxId} className="flex cursor-pointer flex-col gap-0.5">
-                    {label && <span className="text-sm text-foreground">{label}</span>}
-                    {description && <span className="text-xs text-foreground-muted">{description}</span>}
+                <label htmlFor={checkboxId} className={cn("flex cursor-pointer flex-col gap-0.5")}>
+                    {label && <span className={cn("text-sm text-foreground")}>{label}</span>}
+                    {description && <span className={cn("text-xs text-foreground-muted")}>{description}</span>}
                 </label>
             )}
         </div>
