@@ -39,16 +39,16 @@ export default function Input({
     };
 
     return (
-        <div data-supa-ui="input" className="flex w-full flex-col gap-1.5">
+        <div data-supa-ui="input" className={cn("flex w-full flex-col gap-1.5")}>
             {label && (
-                <label htmlFor={inputId} className="text-sm font-medium text-foreground">
+                <label htmlFor={inputId} className={cn("text-sm font-medium text-foreground")}>
                     {label}
                 </label>
             )}
 
-            <div className="relative flex w-full items-center">
+            <div className={cn("relative flex w-full items-center")}>
                 {icon && (
-                    <span className="pointer-events-none absolute left-3 flex items-center text-foreground-muted [&_svg]:size-4">
+                    <span className={cn("pointer-events-none absolute left-3 flex items-center text-foreground-muted [&_svg]:size-4")}>
                         {icon}
                     </span>
                 )}
@@ -70,13 +70,13 @@ export default function Input({
             </div>
 
             {error && (
-                <span id={errorId} role="alert" className="text-xs text-destructive">
+                <span id={errorId} role="alert" className={cn("text-xs text-destructive")}>
                     {error}
                 </span>
             )}
 
             {!error && hint && (
-                <span id={descriptionId} className="text-xs text-foreground-muted">
+                <span id={descriptionId} className={cn("text-xs text-foreground-muted")}>
                     {hint}
                 </span>
             )}
