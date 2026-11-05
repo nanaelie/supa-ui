@@ -62,9 +62,8 @@ export default function Input({
                         "flex w-full min-w-0 rounded-md border text-foreground placeholder:text-foreground-muted file:border-0 file:bg-transparent file:text-sm file:font-medium read-only:border-button read-only:text-foreground-light transition-colors duration-200 hover:border-control-hover focus:border-control-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 disabled:text-foreground-muted aria-invalid:border-destructive aria-invalid:focus-visible:ring-destructive",
                         variants[variant],
                         sizes[size],
-                        icon ? "pl-9": "",
-                        className
-                    )}
+                        icon ? "pl-9": ""
+                    )} ${className}
                     {...props}
                 />
             </div>
