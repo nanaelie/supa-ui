@@ -10,10 +10,10 @@ export default function Spinner({ size = "md", className = "" }: SpinnerProps) {
             data-supa-ui="spinner"
             role="status"
             aria-label="Loading"
-            className={cn(
+            className={`${cn(
                 "inline-block animate-spin rounded-full border-2 border-foreground-muted border-r-transparent",
                 sizes[size]
-            )} ${className}
+            )} ${className}`
         />
     );
 }
