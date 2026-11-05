@@ -12,9 +12,8 @@ export default function Spinner({ size = "md", className = "" }: SpinnerProps) {
             aria-label="Loading"
             className={cn(
                 "inline-block animate-spin rounded-full border-2 border-foreground-muted border-r-transparent",
-                sizes[size],
-                className
-            )}
+                sizes[size]
+            )} ${className}
         />
     );
 }
