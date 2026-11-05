@@ -14,7 +14,7 @@ export type FooterProps = {
 
 export default function Footer({ brand, columns = [], bottom, bottomRight, className = "" }: FooterProps) {
     return (
-        <footer data-supa-ui="footer" className={cn("mt-auto border-t border-border bg-background text-sm text-foreground-muted", className)}>
+        <footer data-supa-ui="footer" className={`${cn("mt-auto border-t border-border bg-background text-sm text-foreground-muted")} ${className}`}>
             <Container className={cn("py-10")}>
                 <div className={cn("grid grid-cols-1 gap-8 md:grid-cols-4")}>
                     {brand && <div className={cn("flex flex-col gap-3")}>{brand}</div>}
