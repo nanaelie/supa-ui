@@ -4,7 +4,7 @@ import { cn } from "../lib/cn";
 type DivProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function CardHeader({ className = "", ...props }: DivProps) {
-    return <div className={`${cn("flex flex-col gap-1 border-b border-border px-5 py-4")} ${className}`} {...props} data-supa-ui="card-header" />;
+    return <div className={`${cn("flex flex-col gap-1 border-b border-border px-5 py-4")} ${className}``} {...props} data-supa-ui="card-header" />;
 }
 
 export function CardTitle({ className = "", ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
@@ -28,7 +28,7 @@ export type CardProps = { interactive?: boolean } & DivProps;
 export default function Card({ interactive = false, className = "", ...props }: CardProps) {
     return (
         <div
-            className={cn(
+            className={`${cn(
                 "overflow-hidden rounded-lg border border-border bg-card text-card-foreground",
                 interactive && "cursor-pointer transition-colors duration-200 hover:border-border-strong"
             )} ${className}
