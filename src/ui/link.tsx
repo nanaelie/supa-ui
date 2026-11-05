@@ -47,9 +47,8 @@ export default function Link({
                 "flex w-full items-center gap-2 overflow-hidden rounded-md text-left outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring active:bg-accent [&>span:last-child]:truncate [&>svg]:shrink-0",
                 variants[variant],
                 sizes[size],
-                active && "bg-accent font-medium text-foreground",
-                className
-            )}
+                active && "bg-accent font-medium text-foreground"
+            )} ${className}
             {...props}
             data-supa-ui="link"
         >
