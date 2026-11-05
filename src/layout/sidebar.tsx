@@ -33,7 +33,7 @@ export default function Sidebar({ groups, pathname = "", link: LinkComponent = L
     return (
         <aside
             data-supa-ui="sidebar"
-            className={cn(`hidden h-full w-(--sui-sidebar-width) shrink-0 border-r border-border bg-background text-foreground md:flex ${className}`)}
+            className={`${cn("hidden h-full w-(--sui-sidebar-width) shrink-0 border-r border-border bg-background text-foreground md:flex")} ${className}`}
         >
             <div className={cn("flex h-full w-full flex-col")}>
                 <div className={cn("min-h-0 flex-1 overflow-y-auto py-2")}>
