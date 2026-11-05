@@ -39,7 +39,7 @@ export default function Input({
     };
 
     return (
-        <div data-supa-ui="input" className={cn("flex w-full flex-col gap-1.5")}>
+        <div data-supa-ui="input" className={`${cn("flex w-full flex-col gap-1.5")}>
             {label && (
                 <label htmlFor={inputId} className={cn("text-sm font-medium text-foreground")}>
                     {label}
@@ -63,7 +63,7 @@ export default function Input({
                         variants[variant],
                         sizes[size],
                         icon ? "pl-9": ""
-                    )} ${className}
+                    )} ${className}`
                     {...props}
                 />
             </div>
