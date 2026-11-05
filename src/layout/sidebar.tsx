@@ -7,14 +7,27 @@ export type SidebarProps = {
     pathname?: string;
     link?: React.ElementType<LinkProps>;
     linkAs?: React.ElementType;
+    locales?: string[];
     footer?: React.ReactNode;
     className?: string;
 };
 
-export default function Sidebar({ groups, pathname = "", link: LinkComponent = Link, linkAs, footer, className = "" }: SidebarProps) {
+const normalizePath = (path: string, locales: string[]) => {
+    const segments = path.split(/[?#]/)[0].split("/").filter(Boolean);
+
+    if (locales.includes(segments[0])) segments.shift();
+
+    return `/${segments.join("/")}`;
+};
+
+export default function Sidebar({ groups, pathname = "", link: LinkComponent = Link, linkAs, locales = ["en", "fr"], footer, className = "" }: SidebarProps) {
+    const currentPath = normalizePath(pathname, locales);
+
     const isActive = (url: string) => {
-        if (url === "/") return pathname === "/";
-        return pathname === url || pathname.startsWith(`${url}/`);
+        const target = normalizePath(url, locales);
+
+        if (target === "/") return currentPath === "/";
+        return currentPath === target || currentPath.startsWith(`${target}/`);
     };
 
     return (
