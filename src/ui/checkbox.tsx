@@ -18,14 +18,14 @@ export default function Checkbox({
     const checkboxId = id ?? generatedId;
 
     return (
-        <div data-supa-ui="checkbox" className={cn("flex items-start gap-2.5", disabled && "opacity-50")}>
+        <div data-supa-ui="checkbox" className={`${cn("flex items-start gap-2.5", disabled && "opacity-50")}>
             <input
                 id={checkboxId}
                 type="checkbox"
                 disabled={disabled}
                 className={cn(
                     "mt-0.5 size-4 shrink-0 cursor-pointer rounded border-control accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed"
-                )} ${className}
+                )} ${className}`
                 {...props}
             />
 
