@@ -21,7 +21,7 @@ export default function Avatar({ src, name = "", size = "md", className = "", ..
             className={`${cn(
                 "inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted font-medium text-foreground-light",
                 sizes[size]
-            )} ${className}`
+            )} ${className}`}
             {...props}
             data-supa-ui="avatar"
         >
