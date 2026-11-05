@@ -1,6 +1,6 @@
 {
   "name": "supa-ui",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "UI kit de composants pour React et Next.js, avec toasts, alertes et confirmations (Toastly) intégrés.",
   "author": "Nana Elie",
   "license": "MIT",
