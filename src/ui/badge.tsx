@@ -27,11 +27,11 @@ export default function Badge({
 
     return (
         <span
-            className={cn(
+            className={`${cn(
                 "inline-flex shrink-0 items-center gap-1 rounded-full border font-medium whitespace-nowrap [&_svg]:size-3",
                 variants[variant],
                 sizes[size]
-            )} ${className}
+            )} ${className}`
             {...props}
             data-supa-ui="badge"
         >
