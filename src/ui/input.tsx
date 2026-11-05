@@ -39,7 +39,7 @@ export default function Input({
     };
 
     return (
-        <div data-supa-ui="input" className={`${cn("flex w-full flex-col gap-1.5")}>
+        <div data-supa-ui="input" className={cn("flex w-full flex-col gap-1.5")}>
             {label && (
                 <label htmlFor={inputId} className={cn("text-sm font-medium text-foreground")}>
                     {label}
@@ -58,12 +58,12 @@ export default function Input({
                     disabled={disabled}
                     aria-invalid={!!error}
                     aria-describedby={error ? errorId : hint ? descriptionId : undefined}
-                    className={cn(
+                    className={`${cn(
                         "flex w-full min-w-0 rounded-md border text-foreground placeholder:text-foreground-muted file:border-0 file:bg-transparent file:text-sm file:font-medium read-only:border-button read-only:text-foreground-light transition-colors duration-200 hover:border-control-hover focus:border-control-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 disabled:text-foreground-muted aria-invalid:border-destructive aria-invalid:focus-visible:ring-destructive",
                         variants[variant],
                         sizes[size],
                         icon ? "pl-9": ""
-                    )} ${className}`
+                    )} ${className}`}
                     {...props}
                 />
             </div>
