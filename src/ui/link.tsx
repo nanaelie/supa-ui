@@ -43,12 +43,12 @@ export default function Link({
             href={url}
             data-active={active}
             aria-current={active ? "page" : undefined}
-            className={cn(
+            className={`${cn(
                 "flex w-full items-center gap-2 overflow-hidden rounded-md text-left outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring active:bg-accent [&>span:last-child]:truncate [&>svg]:shrink-0",
                 variants[variant],
                 sizes[size],
                 active && "bg-accent font-medium text-foreground"
-            )} ${className}
+            )} ${className}`
             {...props}
             data-supa-ui="link"
         >
