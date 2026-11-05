@@ -56,9 +56,8 @@ export default function Modal({
                 aria-label={title}
                 className={cn(
                     "flex max-h-[90vh] w-full flex-col overflow-hidden rounded-lg border border-border bg-popover text-foreground shadow-2xl",
-                    sizes[size],
-                    className
-                )}
+                    sizes[size]
+                )} ${className}
             >
                 {(title || description) && (
                     <div className={cn("flex items-start justify-between gap-4 border-b border-border px-5 py-4")}>
