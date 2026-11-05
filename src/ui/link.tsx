@@ -48,7 +48,7 @@ export default function Link({
                 variants[variant],
                 sizes[size],
                 active && "bg-accent font-medium text-foreground"
-            )} ${className}`
+            )} ${className}`}
             {...props}
             data-supa-ui="link"
         >
