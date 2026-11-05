@@ -45,7 +45,7 @@ export default function Modal({
     return (
         <div
             data-supa-ui="modal"
-            className={`${cn("fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs")}
+            className={cn("fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs")}
             onMouseDown={(event) => {
                 if (event.target === event.currentTarget) onClose();
             }}
@@ -54,10 +54,10 @@ export default function Modal({
                 role="dialog"
                 aria-modal="true"
                 aria-label={title}
-                className={cn(
+                className={`${cn(
                     "flex max-h-[90vh] w-full flex-col overflow-hidden rounded-lg border border-border bg-popover text-foreground shadow-2xl",
                     sizes[size]
-                )} ${className}`
+                )} ${className}`}
             >
                 {(title || description) && (
                     <div className={cn("flex items-start justify-between gap-4 border-b border-border px-5 py-4")}>
