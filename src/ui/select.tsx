@@ -48,11 +48,10 @@ export default function Select({
                     disabled={disabled}
                     aria-invalid={!!error}
                     aria-describedby={error ? errorId : hint ? descriptionId : undefined}
-                    className={cn(
+                    className={`${cn(
                         "w-full min-w-0 cursor-pointer appearance-none rounded-md border border-control bg-field text-foreground transition-colors duration-200 hover:border-control-hover focus:border-control-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive",
-                        sizes[size],
-                        className
-                    )}
+                        sizes[size]
+                    )} ${className}`}
                     {...props}
                 >
                     {options
