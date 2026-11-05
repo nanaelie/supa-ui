@@ -34,10 +34,9 @@ export default function Textarea({
                 rows={rows}
                 aria-invalid={!!error}
                 aria-describedby={error ? errorId : hint ? descriptionId : undefined}
-                className={cn(
-                    "flex w-full min-w-0 resize-y rounded-md border border-control bg-field px-3 py-2 text-sm text-foreground placeholder:text-foreground-muted transition-colors duration-200 hover:border-control-hover focus:border-control-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive",
-                    className
-                )}
+                className={`${cn(
+                    "flex w-full min-w-0 resize-y rounded-md border border-control bg-field px-3 py-2 text-sm text-foreground placeholder:text-foreground-muted transition-colors duration-200 hover:border-control-hover focus:border-control-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"
+                )} ${className}`}
                 {...props}
             />
 
