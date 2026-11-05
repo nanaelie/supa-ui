@@ -35,7 +35,7 @@ export default function EmptyState({
     return (
         <aside
             role="status"
-            className={cn(`flex w-full flex-col items-center rounded-lg text-center ${variants[variant]} ${sizes[size]} ${className}`)}
+            className={`${cn("flex w-full flex-col items-center rounded-lg text-center", variants[variant], sizes[size])} ${className}`}
             {...props}
             data-supa-ui="empty-state"
         >
