@@ -51,11 +51,10 @@ function ToastCard({ toast, onDismiss, className, style }: { toast: StoredToast;
             data-supa-ui="toastly-toast"
             role={variant === "error" ? "alert" : "status"}
             style={{ animation: "sui-toast-in 220ms cubic-bezier(0.22,1,0.36,1)", ...style }}
-            className={cn(
+            className={`${cn(
                 "pointer-events-auto flex w-80 max-w-[calc(100vw-2rem)] items-start gap-3 rounded-lg border bg-popover p-3 text-sm text-foreground shadow-xl",
-                styles.border,
-                className
-            )}
+                styles.border
+            )} ${className}`}
         >
             <span className={cn("mt-0.5 flex size-5 shrink-0 items-center justify-center", styles.icon)}>
                 {toast.loading ? (
