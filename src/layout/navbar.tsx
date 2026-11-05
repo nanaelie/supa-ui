@@ -68,11 +68,10 @@ export default function Navbar({
     return (
         <header
             data-supa-ui="navbar"
-            className={cn(
+            className={`${cn(
                 "relative w-full border-b border-border",
-                blur ? "bg-background/80 backdrop-blur-md" : "bg-background",
-                className
-            )}
+                blur ? "bg-background/80 backdrop-blur-md" : "bg-background"
+            )} ${className}`}
         >
             <Container className={cn("flex h-12 items-center justify-between gap-2 sm:gap-6")}>
                 <div className={cn("flex min-w-0 items-center gap-1")}>
