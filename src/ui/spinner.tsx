@@ -13,7 +13,7 @@ export default function Spinner({ size = "md", className = "" }: SpinnerProps) {
             className={`${cn(
                 "inline-block animate-spin rounded-full border-2 border-foreground-muted border-r-transparent",
                 sizes[size]
-            )} ${className}`
+            )} ${className}`}
         />
     );
 }
