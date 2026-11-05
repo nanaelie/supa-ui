@@ -24,9 +24,8 @@ export default function Checkbox({
                 type="checkbox"
                 disabled={disabled}
                 className={cn(
-                    "mt-0.5 size-4 shrink-0 cursor-pointer rounded border-control accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed",
-                    className
-                )}
+                    "mt-0.5 size-4 shrink-0 cursor-pointer rounded border-control accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed"
+                )} ${className}
                 {...props}
             />
 
