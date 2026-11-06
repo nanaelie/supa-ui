@@ -21,34 +21,34 @@ export default function Layout({
     className = ""
 }: LayoutProps) {
     return (
-        <div
-            data-supa-ui="layout"
-            className={`${cn("flex h-[calc(100svh-var(--sui-app-margin)-var(--sui-app-margin))] min-h-0 w-full flex-col overflow-hidden rounded-(--sui-rounded) border border-(--sui-border) bg-background text-foreground shadow-[var(--sui-components-shadow)]")} ${className}`}
-        >
-            <a
-                href="#main"
-                className={cn("fixed left-2.5 top-0 z-100 w-fit -translate-y-[calc(100%+8px)] rounded-md bg-popover px-2.5 py-1 text-xs font-medium text-foreground shadow transition-transform duration-200 ease-out focus:translate-y-[10px]")}
+        <>
+            <a href="#main" className={cn("fixed left-2.5 top-0 z-100 w-fit -translate-y-[calc(100%+8px)] rounded-md bg-popover px-2.5 py-1 text-xs font-medium text-foreground shadow transition-transform duration-200 ease-out focus:translate-y-[10px]")}>Skip to content</a>
+            <div
+                data-supa-ui="layout"
+                data-sui-component="layout"
+                className={`${className}`}
             >
-                Skip to content
-            </a>
 
-            {header && (
-                <div className={cn("z-40 min-w-0 bg-background", stickyHeader && "sticky top-0")}>{header}</div>
-            )}
-
-            <div className={cn("min-h-0 min-w-0 flex-1 gap-(--sui-components-padding)", sidebar && openSidebar ? "grid grid-cols-[var(--sui-sidebar-width)_minmax(0,1fr)]" : "block")}>
-                {sidebar && openSidebar && (
-                    <div className={cn("min-h-0 min-w-0 overflow-hidden")}>
-                        {sidebar}
-                    </div>
+                {header && (
+                    <>{
+                        header
+                    }</>
                 )}
 
-                <main id="main" tabIndex={-1} className={cn("min-h-0 min-w-0 overflow-x-hidden overflow-y-auto outline-none")}>
-                    {children}
-                </main>
-            </div>
+                <div className={"container"}>
+                    {sidebar && openSidebar && (
+                        <>
+                            {sidebar}
+                        </>
+                    )}
 
-            {footer}
-        </div>
+                    <main id="main" tabIndex={-1} data-sui-component="main" className={cn("bg-background")}>
+                        {children}
+                    </main>
+                </div>
+
+                {footer}
+            </div>
+        </>
     );
 }

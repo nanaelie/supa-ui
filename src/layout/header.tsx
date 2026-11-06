@@ -31,9 +31,10 @@ export default function Header({
 }: HeaderProps) {
     return (
         <header
-            className={`${cn("flex min-h-0 w-full shrink-0 items-center border-b border-border bg-background px-[var(--sui-header-padding-x)] py-[var(--sui-header-padding-y)]")} ${className}`}
+            className={`${cn("bg-background")} ${className}`}
             {...props}
             data-supa-ui="header"
+            data-sui-component="header"
         >
             <div className={cn("flex min-w-0 w-full items-center justify-between gap-4")}>
                 <div className={cn("flex min-w-0 items-center gap-4")}>
