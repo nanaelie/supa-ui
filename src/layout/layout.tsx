@@ -23,7 +23,7 @@ export default function Layout({
     return (
         <div
             data-supa-ui="layout"
-            className={`${cn("grid h-[calc(100svh-2*var(--sui-app-margin))] min-h-0 w-full grid-rows-[auto_minmax(0,1fr)] overflow-hidden rounded-(--sui-rounded) border border-(--sui-border) bg-background text-foreground shadow-[var(--sui-components-shadow)]")} ${className}`}
+            className={`${cn("flex h-[calc(100svh-var(--sui-app-margin)-var(--sui-app-margin))] min-h-0 w-full flex-col overflow-hidden rounded-(--sui-rounded) border border-(--sui-border) bg-background text-foreground shadow-[var(--sui-components-shadow)]")} ${className}`}
         >
             <a
                 href="#main"
@@ -36,7 +36,7 @@ export default function Layout({
                 <div className={cn("z-40 min-w-0 bg-background", stickyHeader && "sticky top-0")}>{header}</div>
             )}
 
-            <div className={cn("grid min-h-0 min-w-0 gap-(--sui-components-padding)", sidebar && openSidebar ? "grid-cols-[var(--sui-sidebar-width)_minmax(0,1fr)]" : "grid-cols-1")}>
+            <div className={cn("flex min-h-0 min-w-0 flex-1 gap-(--sui-components-padding)", sidebar && openSidebar ? "grid-cols-[var(--sui-sidebar-width)_minmax(0,1fr)]" : "grid-cols-1")}>
                 {sidebar && openSidebar && (
                     <div className={cn("min-h-0 min-w-0 overflow-hidden")}>
                         {sidebar}
