@@ -31,12 +31,12 @@ export default function Header({
 }: HeaderProps) {
     return (
         <header
-            className={`${cn("flex h-(--sui-header-height) w-full shrink-0 items-center border-b border-border bg-background")} ${className}`}
+            className={`${cn("flex min-h-0 w-full shrink-0 items-center border-b border-border bg-background px-[var(--sui-header-padding-x)] py-[var(--sui-header-padding-y)]")} ${className}`}
             {...props}
             data-supa-ui="header"
         >
-            <div className={cn("flex h-full min-w-0 flex-1 items-center justify-between gap-4 overflow-x-auto px-4")}>
-                <div className={cn("flex min-w-0 h-full items-center gap-4")}>
+            <div className={cn("flex min-w-0 w-full items-center justify-between gap-4")}>
+                <div className={cn("flex min-w-0 items-center gap-4")}>
                     <a
                         href={brandHref}
                         className={cn("flex shrink-0 items-center justify-center")}
@@ -48,7 +48,7 @@ export default function Header({
                     {segments.length > 0 && (
                         <nav
                             aria-label="Breadcrumb"
-                            className={cn("flex h-full min-w-0 items-center gap-2")}
+                            className={cn("flex min-w-0 items-center gap-2")}
                         >
                             {segments.map((segment, index) => (
                                 <React.Fragment key={`${segment.label}-${index}`}>
