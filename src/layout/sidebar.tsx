@@ -33,16 +33,17 @@ export default function Sidebar({ groups, pathname = "", link: LinkComponent = L
     return (
         <aside
             data-supa-ui="sidebar"
-            className={`${cn("hidden h-full w-(--sui-sidebar-width) shrink-0 border-r border-border bg-background text-foreground md:flex")} ${className}`}
+            data-sui-component="sidebar"
+            className={`${cn("bg-background text-foreground")} ${className}`}
         >
-            <div className={cn("flex h-full w-full flex-col")}>
+            <div className={cn("flex min-h-0 w-full flex-1 flex-col")}>
                 <div className={cn("min-h-0 flex-1 overflow-y-auto py-2")}>
                     <nav aria-label="Navigation">
                         {groups.map((group, index) => (
                             <React.Fragment key={index}>
                                 <ul className={cn("flex w-full flex-col gap-1 px-2 py-1")}>
-                                    {group.map((item) => (
-                                        <li key={item.url}>
+                                    {group.map((item, idx) => (
+                                        <li key={idx}>
                                             <LinkComponent
                                                 {...item}
                                                 as={linkAs ?? item.as}

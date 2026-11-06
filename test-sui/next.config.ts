@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  transpilePackages: ["supa-ui"],
   experimental: {
     agentFeedback: true,
   },
@@ -15,6 +16,7 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  devIndicators: false,
 };
 
 export default nextConfig;

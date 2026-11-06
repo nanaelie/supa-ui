@@ -7,6 +7,52 @@
 @source "./tailwind-candidates.txt";
 @custom-variant dark (&:where(.dark, .dark *));
 
+
+html {
+    min-height: 100%;
+}
+
+:root {
+    --sui-app-margin: 12px;
+    --sui-components-padding: 10px;
+    --sui-components-shadow: 0 0 5px 2px #eee;
+    --sui-border: #f1f5fb;
+    --sui-components-border: 1px solid var(--sui-border);
+    --sui-rounded: 10px;
+    --sui-header-padding-x: 12px;
+    --sui-header-padding-y: 8px;
+    --sui-header-height: auto;
+    --sui-sidebar-width: auto;
+}
+
+[data-sui-component]:not([data-sui-component="layout"]) {
+	border: var(--sui-components-border);
+	box-shadow: var(--sui-components-shadow);
+    border-radius: var(--sui-rounded);
+	padding: var(--sui-components-padding);
+}
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 100%;
+    max-height: 100vh;
+    margin: 0;
+    padding: var(--sui-app-margin);
+    color: #000;
+    background-color: #fafafa;
+    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    font-size: 13px;
+}
+
+body :where(*, *::before, *::after) {
+    box-sizing: border-box;
+}
+
+body :where(input, textarea) {
+    font-size: 16px;
+}
+
 @layer base {
     [data-supa-ui],
     [data-supa-ui] *,
@@ -48,4 +94,58 @@
 @keyframes sui-pop-in {
     from { opacity: 0; transform: scale(0.96); }
     to { opacity: 1; transform: scale(1); }
+}
+
+.container {
+    max-height: 90dvh;
+	display: grid;
+  	column-gap: var(--sui-components-padding);
+	grid-template-rows: auto;
+  	grid-template-columns: var(--sui-sidebar-width) 1fr;
+}
+
+.sidebar-footer {
+	margin-top: auto;
+}
+
+.separator {
+  height: 1px;
+  background-color: currentColor;
+  margin-bottom: 8px;
+}
+
+[data-sui-component="layout"] {
+  	display: grid;
+	border: 0;
+    width: 100%;
+    margin: 0;
+	padding: 0;
+	row-gap: var(--sui-components-padding);
+	height: 100vh;
+  	grid-template-rows: var(--sui-header-height) 1fr;
+ 	grid-template-columns: auto;
+}
+
+[data-sui-component="header"] {
+    padding-inline: var(--sui-header-padding-x);
+    padding-block: var(--sui-header-padding-y);
+
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+[data-sui-component="sidebar"] {
+    min-width: 200px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+[data-sui-component="main"] {
+  	overflow-x: hidden;
+	overflow-y: auto;
+	max-height: 100dvh;
 }

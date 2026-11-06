@@ -30,7 +30,7 @@ export default function Input({
     const sizes = {
         sm: "h-8 px-2.5 text-xs",
         md: "h-[34px] px-3 text-base",
-        lg: "h-10 px-3.5 text-base"
+        lg: "h-10 px-3.5 text-base",
     };
 
     const variants = {
@@ -39,7 +39,7 @@ export default function Input({
     };
 
     return (
-        <div data-supa-ui="input" className={cn("flex w-full flex-col gap-1.5")}>
+        <div data-supa-ui="input" className={`${cn("flex w-full flex-col gap-1.5")}`}>
             {label && (
                 <label htmlFor={inputId} className={cn("text-sm font-medium text-foreground")}>
                     {label}
