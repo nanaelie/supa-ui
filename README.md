@@ -1,5 +1,7 @@
 # supa-ui
 
+[![npm version](https://img.shields.io/npm/v/supa-ui)](https://www.npmjs.com/package/supa-ui) [![npm downloads](https://img.shields.io/npm/dm/supa-ui)](https://www.npmjs.com/package/supa-ui)
+
 UI kit de composants pour React et Next.js, avec Toastly (toasts, alertes et confirmations) intégré.
 
 ## Installation
