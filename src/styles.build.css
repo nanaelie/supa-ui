@@ -7,6 +7,44 @@
 @source "./tailwind-candidates.txt";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+    --sui-app-margin: 12px;
+    --sui-components-padding: 10px;
+    --sui-components-shadow: 0 0 5px 2px #eee;
+    --sui-border: #f1f5fb;
+    --sui-components-border: 1px solid var(--sui-border);
+    --sui-rounded: 10px;
+    --sui-header-padding-x: 12px;
+    --sui-header-padding-y: 12px;
+    --sui-header-height: auto;
+    --sui-sidebar-width: 120px;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: var(--sui-app-margin);
+    color: #000;
+    background-color: #fafafa;
+    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    font-size: 13px;
+}
+
+body :where(*, *::before, *::after) {
+    box-sizing: border-box;
+}
+
+body :where(input, textarea) {
+    font-size: 16px;
+}
+
 @layer base {
     [data-supa-ui],
     [data-supa-ui] *,
