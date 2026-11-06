@@ -57,6 +57,10 @@ await toastly.alert({ title: "Session", message: "Votre session expire bientôt.
 const ok = await toastly.confirm({ title: "Supprimer ?", danger: true });
 ```
 
+## Playground
+
+Le playground `test-sui` est disponible en ligne sur [supa-ui-three.vercel.app](https://supa-ui-three.vercel.app).
+
 ## Développement
 
 ```bash
