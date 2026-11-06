@@ -1,6 +1,6 @@
 import { Avatar, Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Header, Layout, PageHeader, Sidebar } from "supa-ui";
 
-const VERSION = "v0.3.11";
+const VERSION = "v0.3.12";
 
 function Icon({ name }: { name: "grid" | "users" | "settings" | "chart" | "help" }) {
     const paths = {
