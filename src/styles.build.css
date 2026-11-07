@@ -13,6 +13,7 @@ html {
 }
 
 :root {
+    --sui-app-margin: 12px;
     --sui-container-max-height: 89dvh;
     --sui-components-padding: 10px;
     --sui-components-shadow: 0 0 5px 2px #eee;
@@ -117,11 +118,11 @@ body :where(input, textarea) {
 [data-sui-component="layout"] {
   	display: grid;
 	border: 0;
-    width: 100%;
-    margin: 0;
+    width: calc(100% - 2 * var(--sui-app-margin));
+    margin: var(--sui-app-margin);
 	padding: 0;
 	row-gap: var(--sui-components-padding);
-	height: 100vh;
+	height: calc(100vh - 2 * var(--sui-app-margin));
   	grid-template-rows: var(--sui-header-height) 1fr;
  	grid-template-columns: auto;
 }
